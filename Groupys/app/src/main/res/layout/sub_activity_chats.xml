@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1.0">
+
+    <ListView
+        android:layout_weight="0.9"
+        android:id="@+id/listChats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <LinearLayout
+            android:id="@+id/FootBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_nick"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/editTextNickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="7"
+                    android:hint="@string/hint_vazio"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPersonName"
+                    android:selectAllOnFocus="true"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="93dp"
+                    tools:layout_editor_absoluteY="100dp"
+                    tools:ignore="Autofill"
+                    android:maxLength="10"/>
+                <ProgressBar
+                    android:id="@+id/loadingNick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:maxWidth="20dip"
+                    android:minWidth="20dip" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp">
+                <Button
+                    android:id="@+id/btnCriarSala"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="38dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/add"
+                    app:iconSize="28dp"
+                    app:iconTint="#737373"
+                    tools:targetApi="lollipop" />
+                <Button
+                    android:id="@+id/btnReload"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="38dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@drawable/reload"
+                    app:iconSize="20dp"
+                    app:iconTint="#737373"
+                    tools:targetApi="lollipop" />
+            </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

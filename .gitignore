@@ -1,0 +1,8 @@
+.env
+.env.example
+node_modules
+yarn.lock
+README.md
+.editorconfig
+yarn-error-log
+.vscode

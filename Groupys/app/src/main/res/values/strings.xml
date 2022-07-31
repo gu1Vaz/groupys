@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Groupye</string>
+    //navbar btns
+    <string name="btn_chats">Chats</string>
+    <string name="btn_grupos">Groupys</string>
+    <string name="btn_match">Match</string>
+    <string name="btn_amigos">Amigos</string>
+    <string name="btn_ale">Stories</string>
+    //btns
+    <string name="btn_criar">Criar</string>
+    //textview
+    <string name="tv_criar">Criar Sala:</string>
+
+    //intros
+    <string name="intro_match">Encontre outra pessoa anonima e converse com ela com apenas com um clique no botão Match</string>
+    //edit texts hints
+    <string name="hint_nick">Nick:</string>
+    <string name="hint_vazio"></string>
+    <string name="hint_message">...</string>
+    <string name="hint_maxSala">Maximo de Pessoas</string>
+    <string name="hint_nameSala">Nome da Sala</string>
+
+    //toasts
+    <string name="toast_find">Buscando...</string>
+    <string name="toast_nick_success">Nick Alterado</string>
+    <string name="toast_reload_success">Chats Atualizados</string>
+
+    //errors
+    <string name="error_1">Ocorreu um erro...</string>
+    <string name="error_2">Não foi possivel carregar os chats..</string>
+
+    //arrays
+    <string-array name="array1">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    //notas de versao
+    <string name="embreve_conta">Em breve sua conta aqui</string>
+    <string name="embreve_config">Em breve configurações aqui</string>
+    <string name="embreve_groupys">Em breve Groupys aqui</string>
+    <string name="embreve_amigos">Em breve Amigos aqui</string>
+    <string name="embreve_ale">Em breve algo aqui</string>
+    <string name="embreve_match">Em breve Match aqui</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+</resources>

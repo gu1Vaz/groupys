@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityMain"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            android:id="@+id/nav_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <LinearLayout
+                android:id="@+id/btnsMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:ignore="ExtraText">
+
+                <Button
+                    android:id="@+id/btnAccountChat"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:onClick="openConta"
+                    app:icon="@drawable/person"
+                    app:iconSize="26dp"
+                    app:iconTint="#737373"
+                    tools:targetApi="lollipop" />
+
+                <Button
+                    android:id="@+id/btnSettingsMain"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="38dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:onClick="openConfig"
+                    app:icon="@drawable/gear"
+                    app:iconSize="24dp"
+                    app:iconTint="#737373"
+                    tools:targetApi="lollipop" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <HorizontalScrollView
+            android:id="@+id/scroll_btns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:gravity="center"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_groupys"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="trocaView"
+                    android:text="@string/btn_grupos" />
+
+                <TextView
+                    android:id="@+id/btn_match"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="trocaView"
+                    android:text="@string/btn_match" />
+
+                <TextView
+                    android:id="@+id/btn_chats"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/borderbottom"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="trocaView"
+                    android:text="@string/btn_chats" />
+
+                <TextView
+                    android:id="@+id/btn_amigos"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="trocaView"
+                    android:text="@string/btn_amigos" />
+
+                <TextView
+                    android:id="@+id/btn_ale"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="trocaView"
+                    android:text="@string/btn_ale" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foregroundGravity="bottom"
+            android:layout_marginTop="15dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp">
+            <include android:id="@+id/groupys"  layout="@layout/sub_activity_groupys" />
+            <include android:id="@+id/match"  layout="@layout/sub_activity_match" />
+            <include android:id="@+id/chats"  layout="@layout/sub_activity_chats" />
+            <include android:id="@+id/amigos"  layout="@layout/sub_activity_amigos" />
+            <include android:id="@+id/ale"  layout="@layout/sub_activity_ale" />
+
+        </ViewFlipper>
+    </LinearLayout>
+</RelativeLayout>

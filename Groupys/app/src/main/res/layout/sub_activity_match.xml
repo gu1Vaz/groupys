@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <RelativeLayout
+        android:layout_width="470dp"
+        android:layout_height="470dp"
+        tools:ignore="UselessParent"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/intro_match"
+            android:layout_width="203dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="@string/intro_match"
+            android:textColor="@color/purple_200"
+            android:gravity="center_horizontal" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/btn_find_match"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_rawRes="@raw/btn_match2"
+            android:layout_marginBottom="50dp">
+
+        </com.airbnb.lottie.LottieAnimationView>
+        <TextView
+            android:id="@+id/title_find_match"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/btn_match"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginBottom="18dp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+</LinearLayout>

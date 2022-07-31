@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.group">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:icon="@drawable/logo2"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo2"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Group"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ActivityConta" />
+        <activity android:name=".ActivityConfig" />
+        <activity android:name=".ActivityChatPv" />
+        <activity
+            android:name=".ActivityChat"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".ActivityMain"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".ActivitySplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6075850043760657~6449285632" />
+    </application>
+
+</manifest>
