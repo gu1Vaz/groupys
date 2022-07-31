@@ -1,7 +1,7 @@
 # Groupys
 **[code in branch master]**
 
-An app to chat with anonymous people for Android
+An app to chat with anonymous people in rooms or meetings for Android
 
 The project contain:
 - App developed in Java
