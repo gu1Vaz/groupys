@@ -41,7 +41,6 @@ public class ViewChats extends View_ {
     private final Toasty Toasty;
     private final RequestQueue Queue;
 
-    private final String apiUrl = "http://192.168.0.117:3000/";
     private boolean _EditTextIgnore = false;
 
     Button btnCriarSala, btnReloadSala;
@@ -212,7 +211,7 @@ public class ViewChats extends View_ {
     }
 
     //Volley Requests
-    JsonArrayRequest listChats = new JsonArrayRequest(Request.Method.GET, apiUrl+"getSalas",null,
+    JsonArrayRequest listChats = new JsonArrayRequest(Request.Method.GET, Conexao.host+"getSalas",null,
             this::loadListChats,
             error -> { }
     );

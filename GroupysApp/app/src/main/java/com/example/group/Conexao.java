@@ -11,7 +11,9 @@ import io.socket.client.Socket;
 
 public class Conexao  {
     private static Conexao instance;
-    public  String host = "http://192.168.0.117:3000";
+    //http://192.168.0.117:3000/
+    //https://groupys.nonegui.cloud/
+    public  String host = "http://192.168.0.109:3000/";
     Socket socket;
 
     public synchronized static Conexao getInstance() {

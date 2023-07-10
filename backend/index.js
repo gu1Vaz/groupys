@@ -6,7 +6,7 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {allowEIO3: true});
 
 const {addRoom, inRoom, leaveRoom, getSalas} = require('./usersAndrooms');
 const {addUser, removeUser, setNameUser, getUser, getUsers, getUsersInRoom} = require('./usersAndrooms');
