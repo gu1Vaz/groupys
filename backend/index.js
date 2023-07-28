@@ -13,7 +13,7 @@ const {addUser, removeUser, setNameUser, getUser, getUsers, getUsersInRoom} = re
 const {joinMatch, findMatch, leaveMatch, getUserMatch, getUsersMatch} = require('./usersAndrooms');
 
 var corsOptions = {
-  origin: 'http://hackin.online:3000',
+  origin: 'https://groupys.nonegui.cloud/',
   optionsSuccessStatus: 200 
 }
 app.use(cors(corsOptions));
@@ -53,7 +53,7 @@ io.on('connection',(socket)=>{
     socket.join(user.room);
 
     //socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.`});
-    socket.broadcast.to(user.room).emit('message', {user: 'admin', text: `${user.name} has joined!` });
+    socket.broadcast.to(user.room).emit('message', {user: 'admin', text: `${user.name} entrou!` });
     socket.broadcast.emit('listData', {user: 'admin', rooms: getSalas() });
     io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
     
@@ -88,15 +88,17 @@ io.on('connection',(socket)=>{
   });
   socket.on("find_match",(callback)=>{
     const {match, error} = findMatch({ id: socket.id });
-
     if(error) return callback(["error",error]);
+    if(error == "Sem pessoas no momento") socket.join(match);
+
+    socket.join(match);
 
     io.to(match).emit('matchFound');
     return callback(["success"]);
   });
   socket.on("leave_match",()=>{
     const user = leaveMatch({ id: socket.id });
-    io.to(user.room).emit('message', { user: 'admin', text: `${user.name} saiu.` });
+    io.to(user?.room).emit('message', { user: 'admin', text: `${user?.name} saiu.` });
   });
 
   //Messages

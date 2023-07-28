@@ -4,6 +4,8 @@ const users = [];
 const pv_users = [];
 const rooms = [{count:0, max:10, nome:"global 1"},{count:0, max:10, nome:"global 2"},{count:0, max:10, nome:"global 3"}];
 var guest_count = 0;
+var pvroom_count = 0;
+
 
 //Salas
 const addRoom = ({id, room, max }) => {
@@ -155,21 +157,25 @@ const joinMatch = ({ id }) => {
   return { user };
 }
 const findMatch = ({ id }) => {
+  console.log("teste")
+  console.log(pv_users)
   if(!id) return { error: 'Fatal Error' };
+
   const index = pv_users.findIndex((user) => user.id === id);
   const excludes  = pv_users.map((e, i) => e.room != null ? i : "").filter(String);
-  if(pv_users.length <= 1) return {error:"Sem pessoas no momento"}
   if(pv_users[index] == -1) return {error:"Erro Fatal"}
   if(pv_users[index].room) return {error:"Ja esta em uma sala"}
+
+  const sala = "room" + pvroom_count;
+  if(pv_users.length <= 1) return {error:"Sem pessoas no momento", match:sala}
 
   excludes.push(index);
 
   const match = rand(0, pv_users.length-1, excludes);
-  if(match === pv_users.length) return {error:"Sem pessoas no momento"}
   
   try{
-    pv_users[match].room = id;
-    pv_users[index].room = pv_users[match].id;
+    pv_users[match].room = "braba";
+    pv_users[index].room = "braba";
     return {match:pv_users[match].id}
   }catch(e){
     return {error:404}
@@ -181,10 +187,6 @@ const leaveMatch = ({ id }) => {
 
   if(index !== -1) {
     const userRemoved = pv_users.splice(index, 1)[0];
-    if(userRemoved.room){
-      const index2 = pv_users.findIndex((user) => user.id === userRemoved.room);
-      if(index2 != -1) pv_users[index2].room = null;
-    }
     return userRemoved;
   };
 
