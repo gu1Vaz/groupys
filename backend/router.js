@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const path = require('path');
-const {getSalas,getUsers, getUsersMatch} = require('./usersAndrooms');
+const {getRooms} = require('./controllers/Rooms');
 
-router.get("/getSalas", (req, res) => {
+router.get("/getRooms", (req, res) => {
   res.send(
-    getSalas()
+    getRooms()
   ).status(200);
 });
 

@@ -211,7 +211,7 @@ public class ViewChats extends View_ {
     }
 
     //Volley Requests
-    JsonArrayRequest listChats = new JsonArrayRequest(Request.Method.GET, Conexao.host+"getSalas",null,
+    JsonArrayRequest listChats = new JsonArrayRequest(Request.Method.GET, Conexao.host+"getRooms",null,
             this::loadListChats,
             error -> { }
     );
