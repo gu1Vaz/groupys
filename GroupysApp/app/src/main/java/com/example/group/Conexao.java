@@ -13,7 +13,7 @@ public class Conexao  {
     private static Conexao instance;
     //http://192.168.0.117:3000/
     //https://groupys.nonegui.cloud/
-    public  String host = "http://192.168.0.109:3000/";
+    public  String host = "https://groupys.nonegui.cloud/";
     Socket socket;
 
     public synchronized static Conexao getInstance() {
