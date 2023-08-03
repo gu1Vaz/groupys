@@ -28,7 +28,7 @@ io.on('connection',(socket)=>{
   try{
     handlers(socket, io);
   }catch(e){
-    if(error) return callback(["error","Fatal Error"]);
+    return callback(["error","Fatal Error"]);
   }
   if(error) return callback(["error",error]);
 });
