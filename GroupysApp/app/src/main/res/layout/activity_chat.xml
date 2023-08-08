@@ -46,6 +46,7 @@
                 app:iconSize="24dp"
                 app:iconTint="#737373"
                 tools:targetApi="lollipop"
+                android:onClick="openConfig"
                 style="?android:attr/borderlessButtonStyle" />
 
             <Button

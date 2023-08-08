@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -48,10 +49,9 @@ public class ActivityChat extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_Main);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-
-        getSupportActionBar().hide();
 
         Toasty = new Toasty(this);
 
@@ -134,6 +134,10 @@ public class ActivityChat extends AppCompatActivity {
 
         });
         finish();
+    }
+    public void openConfig(View v){
+        Intent intent = new Intent(this, ActivityConfig.class);
+        startActivity(intent);
     }
     public void leave(){
         Conexao.socket.emit("leave","", (Ack) args -> {

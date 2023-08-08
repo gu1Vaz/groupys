@@ -2,7 +2,7 @@
     <string name="app_name">Groupies</string>
     //navbar btns
     <string name="btn_chats">Chats</string>
-    <string name="btn_grupos">Groupys</string>
+    <string name="btn_grupos">Groupies</string>
     <string name="btn_match">Match</string>
     <string name="btn_amigos">Amigos</string>
     <string name="btn_ale">Stories</string>
@@ -44,7 +44,7 @@
     <string name="embreve_config">Em breve configurações aqui</string>
     <string name="embreve_groupys">Em breve Groupys aqui</string>
     <string name="embreve_amigos">Em breve Amigos aqui</string>
-    <string name="embreve_ale">Em breve algo aqui</string>
+    <string name="embreve_ale">Em breve Stories aqui</string>
     <string name="embreve_match">Em breve Match aqui</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
