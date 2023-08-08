@@ -3,6 +3,7 @@ package com.example.group;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -11,6 +12,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.HorizontalScrollView;
 import android.widget.ViewFlipper;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.preference.PreferenceManager;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -29,9 +32,9 @@ public class ActivityMain extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_Main);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Objects.requireNonNull(getSupportActionBar()).hide();
 
         selectedBtn = (View) findViewById(R.id.btn_chats);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
@@ -49,6 +52,13 @@ public class ActivityMain extends AppCompatActivity  {
         dicObjsViews = new HashMap<>();
         dicObjsViews.put("chats",vChats);
 
+    }
+    public void switchTheme(View view) {
+        int nightMode = AppCompatDelegate.getDefaultNightMode();
+        AppCompatDelegate.setDefaultNightMode(nightMode == AppCompatDelegate.MODE_NIGHT_NO
+                ? AppCompatDelegate.MODE_NIGHT_YES
+                : AppCompatDelegate.MODE_NIGHT_NO);
+        recreate();
     }
     public boolean onTouchEvent(MotionEvent event) {
         gestureDetector.onTouchEvent(event);
@@ -147,6 +157,14 @@ public class ActivityMain extends AppCompatActivity  {
     public void setConexao(){
         Conexao= com.example.group.Conexao.getInstance();
         Conexao.open();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (Conexao != null) {
+            Conexao.close();
+        }
     }
 
 }

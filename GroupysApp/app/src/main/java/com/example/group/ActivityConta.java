@@ -10,9 +10,9 @@ public class ActivityConta extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_Main);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conta);
-        Objects.requireNonNull(getSupportActionBar()).hide();
     }
     public void onBackPressed(){
         finish();

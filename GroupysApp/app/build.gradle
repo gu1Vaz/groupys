@@ -7,8 +7,8 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.group"
-        minSdkVersion 16
+        applicationId 'com.gu1Vazz.groupies'
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"

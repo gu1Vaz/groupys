@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Groupye</string>
+    <string name="app_name">Groupies</string>
     //navbar btns
     <string name="btn_chats">Chats</string>
     <string name="btn_grupos">Groupys</string>

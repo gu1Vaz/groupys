@@ -37,10 +37,9 @@ public class ActivityChatPv extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_Main);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_pv);
-
-        Objects.requireNonNull(getSupportActionBar()).hide();
 
         Toasty = new Toasty(this);
 

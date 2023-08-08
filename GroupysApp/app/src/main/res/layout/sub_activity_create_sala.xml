@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_criar"
-        android:backgroundTint="@color/light_roxo"
+        android:backgroundTint="@color/sub_danger"
         android:textColor="@color/white"/>
 
 </LinearLayout>

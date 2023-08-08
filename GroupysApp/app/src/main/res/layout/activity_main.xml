@@ -24,7 +24,19 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 tools:ignore="ExtraText">
-
+                <Button
+                    android:id="@+id/btnSwitchTheme"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@android:color/transparent"
+                    android:onClick="switchTheme"
+                    app:icon="@drawable/dark_mode"
+                    app:iconSize="26dp"
+                    app:iconTint="#737373"
+                    tools:targetApi="lollipop" />
                 <Button
                     android:id="@+id/btnAccountChat"
                     style="?android:attr/borderlessButtonStyle"
