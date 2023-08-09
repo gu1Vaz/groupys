@@ -46,6 +46,11 @@
     <string name="embreve_amigos">Em breve Amigos aqui</string>
     <string name="embreve_ale">Em breve Stories aqui</string>
     <string name="embreve_match">Em breve Match aqui</string>
+
+    //update
+    <string name="update_title">Atualização disponivel</string>
+    <string name="update_message">Há uma nova versão do app disponivel, atualize o app na playstore</string>
+    <string name="update_button">Update</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -60,6 +65,8 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -82,7 +82,6 @@ public class ViewMatch extends View_ {
                 if(!eBtnMatch) return;
                 Conexao.socket.emit("find_match", (Ack) args -> {
                     JSONArray response = (JSONArray) args[0];
-                    Log.d("eae",response.toString());
                     try {
                         if(response.get(0).toString().equals("success")) openChat();
                     } catch (JSONException e) {

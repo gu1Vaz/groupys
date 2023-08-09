@@ -4,12 +4,12 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.HorizontalScrollView;
 import android.widget.ViewFlipper;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,6 +53,7 @@ public class ActivityMain extends AppCompatActivity  {
         dicObjsViews = new HashMap<>();
         dicObjsViews.put("chats",vChats);
 
+        new UpdaterTask(this).execute();
     }
     public void switchTheme(View view) {
         int nightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
@@ -93,7 +94,6 @@ public class ActivityMain extends AppCompatActivity  {
         }
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-            Log.d("eae", "eeee");
             return super.onScroll(e1, e2, distanceX, distanceY);
         }
     }
@@ -172,6 +172,27 @@ public class ActivityMain extends AppCompatActivity  {
         super.onDestroy();
         if (Conexao != null) {
             Conexao.close();
+        }
+    }
+
+    //asyncs tasks
+    private class UpdaterTask extends AsyncTask<Void, Void, Void> {
+        private ActivityMain activity;
+        private boolean pass = false;
+
+        public UpdaterTask(ActivityMain _activity) {
+            activity = _activity;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            Updater updater = new Updater(activity, getSupportFragmentManager());
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
         }
     }
 
