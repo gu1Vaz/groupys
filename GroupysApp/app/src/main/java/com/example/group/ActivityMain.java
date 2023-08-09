@@ -3,8 +3,9 @@ package com.example.group;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,7 +14,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.ViewFlipper;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.preference.PreferenceManager;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -29,6 +29,7 @@ public class ActivityMain extends AppCompatActivity  {
     private HashMap<String, Class<? extends View_> > dicViews;
     private HashMap<String, View_> dicObjsViews;
     private Conexao Conexao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +55,17 @@ public class ActivityMain extends AppCompatActivity  {
 
     }
     public void switchTheme(View view) {
-        int nightMode = AppCompatDelegate.getDefaultNightMode();
-        AppCompatDelegate.setDefaultNightMode(nightMode == AppCompatDelegate.MODE_NIGHT_NO
-                ? AppCompatDelegate.MODE_NIGHT_YES
-                : AppCompatDelegate.MODE_NIGHT_NO);
+        int nightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        AppCompatDelegate.setDefaultNightMode(nightMode == Configuration.UI_MODE_NIGHT_YES
+                ? AppCompatDelegate.MODE_NIGHT_NO
+                : AppCompatDelegate.MODE_NIGHT_YES);
         recreate();
     }
-    public boolean onTouchEvent(MotionEvent event) {
-        gestureDetector.onTouchEvent(event);
-        return super.onTouchEvent(event);
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        gestureDetector.onTouchEvent(ev);
+        return super.dispatchTouchEvent(ev);
     }
 
     //listeners ui
@@ -73,7 +76,6 @@ public class ActivityMain extends AppCompatActivity  {
     class CustomGestureDetector extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-
             // Swipe left (next)
             if (e1.getX() > e2.getX()) {
                 viewFlipper.showNext();
@@ -87,6 +89,11 @@ public class ActivityMain extends AppCompatActivity  {
             }
 
             return super.onFling(e1, e2, velocityX, velocityY);
+        }
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            Log.d("eae", "eeee");
+            return super.onScroll(e1, e2, distanceX, distanceY);
         }
     }
     public void dicViews(){
@@ -115,8 +122,8 @@ public class ActivityMain extends AppCompatActivity  {
             Class[] cArg = new Class[1];
             cArg[0] = Activity.class;
             dicObjsViews.put(tagView, Objects.requireNonNull(dicViews.get(tagView))
-                                             .getDeclaredConstructor(cArg)
-                                             .newInstance(this));
+                    .getDeclaredConstructor(cArg)
+                    .newInstance(this));
         }
     }
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -137,9 +144,9 @@ public class ActivityMain extends AppCompatActivity  {
                 Class[] cArg = new Class[1];
                 cArg[0] = Activity.class;
                 dicObjsViews.put(tagView, Objects.requireNonNull(dicViews.get(tagView))
-                            .getDeclaredConstructor(cArg)
-                            .newInstance(this));
-        }}catch (Exception ignored){ }
+                        .getDeclaredConstructor(cArg)
+                        .newInstance(this));
+            }}catch (Exception ignored){ }
     }
     //Btns Activitys
 

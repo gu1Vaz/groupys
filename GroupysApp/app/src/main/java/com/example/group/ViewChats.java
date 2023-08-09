@@ -33,9 +33,6 @@ import io.socket.emitter.Emitter;
 
 
 public class ViewChats extends View_ {
-
-
-
     public Conexao Conexao = com.example.group.Conexao.getInstance();
     private final Convert Convert = new Convert();
     private final Toasty Toasty;

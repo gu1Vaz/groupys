@@ -21,7 +21,7 @@
 
             <TextView
                 android:id="@+id/nomeChat"
-                android:textColor="@color/danger"
+                android:textColor="@color/sub_danger"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -128,7 +128,6 @@
                     android:scrollingCache="true"
                     android:smoothScrollbar="true"/>
             </LinearLayout>
-
         </RelativeLayout>
 
 
