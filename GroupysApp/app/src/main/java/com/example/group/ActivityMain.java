@@ -112,6 +112,8 @@ public class ActivityMain extends AppCompatActivity  {
 
         String tagView = v.getResources().getResourceEntryName(v.getId()).substring(4);
         int idView = getResources().getIdentifier(tagView, "id", getPackageName());
+        viewFlipper.setInAnimation(ActivityMain.this, android.R.anim.fade_in);
+        viewFlipper.setOutAnimation(ActivityMain.this, android.R.anim.fade_out);
         viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(idView)));
 
         this.selectedBtn.setBackground(null);
