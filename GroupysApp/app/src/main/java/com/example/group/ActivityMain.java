@@ -76,14 +76,15 @@ public class ActivityMain extends AppCompatActivity  {
     class CustomGestureDetector extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            // Swipe left (next)
             if (e1.getX() > e2.getX()) {
+                viewFlipper.setInAnimation(ActivityMain.this, R.anim.slide_in_from_right);
+                viewFlipper.setOutAnimation(ActivityMain.this, R.anim.slide_out_to_left);
                 viewFlipper.showNext();
                 trocaView();
             }
-
-            // Swipe right (previous)
             if (e1.getX() < e2.getX()) {
+                viewFlipper.setOutAnimation(ActivityMain.this, R.anim.slide_out_to_right);
+                viewFlipper.setInAnimation(ActivityMain.this, R.anim.slide_in_from_left);
                 viewFlipper.showPrevious();
                 trocaView();
             }
@@ -111,7 +112,6 @@ public class ActivityMain extends AppCompatActivity  {
 
         String tagView = v.getResources().getResourceEntryName(v.getId()).substring(4);
         int idView = getResources().getIdentifier(tagView, "id", getPackageName());
-        viewFlipper.setInAnimation(AnimationUtils.loadAnimation(v.getContext(), android.R.anim.fade_in));
         viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(idView)));
 
         this.selectedBtn.setBackground(null);
@@ -135,7 +135,6 @@ public class ActivityMain extends AppCompatActivity  {
         int idView = getResources().getIdentifier("btn_"+tagView, "id", getPackageName());
 
         v = findViewById(idView);
-        viewFlipper.setInAnimation(AnimationUtils.loadAnimation(v.getContext(), android.R.anim.fade_in));
 
         this.selectedBtn = v;
         this.selectedBtn.setBackground(getResources().getDrawable(R.drawable.borderbottom));
