@@ -14,6 +14,13 @@ router.get("/version", (req, res) => {
     [version, "by None Gui"]
   ).status(200);
 });
+router.get("/privacy", (req, res) => {
+  res.sendFile(path.join(__dirname, './views', 'privacy.html'));
+});
+
+router.get("/terms", (req, res) => {
+  res.sendFile(path.join(__dirname, './views', 'terms.html'));
+});
 
 // router.get("/getUsers", (req, res) => {
 //   res.send(
