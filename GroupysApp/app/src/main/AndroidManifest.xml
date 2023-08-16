@@ -8,13 +8,13 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
+        android:allowBackup="true"
         android:icon="@drawable/moon"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@drawable/moon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Splash"
-        android:allowBackup="true"
-        android:largeHeap="true">
+        android:theme="@style/Theme.Splash">
         <activity android:name=".ActivityConta" />
         <activity android:name=".ActivityConfig" />
         <activity android:name=".ActivityChatPv" />
@@ -23,9 +23,10 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
             android:name=".ActivityMain"
-            android:configChanges="orientation|keyboardHidden|screenSize|uiMode" >
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
